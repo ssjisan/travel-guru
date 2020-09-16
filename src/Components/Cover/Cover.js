@@ -7,14 +7,14 @@ import './Cover.css'
 const Cover = () => {
     
     return (
-        <div>
+        <div className="carousel">
            <MDBContainer>
                 <MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
                         <MDBCarouselInner>
                             <MDBCarouselItem itemId="1">
                                 <MDBView>
                                     <img className="d-block w-100" style={{width:100}} src="https://external-preview.redd.it/J2poU3SeyemprBqG97c5VcAf5BuDwADYuGbs2d3H6AI.jpg?auto=webp&s=73b4d0e2b6cbd2dd56c485df82a6ec50e55f3fcd" alt="First slide"/>
-                                <MDBMask overlay="black-light" />
+                                
                                 </MDBView>
                                 <MDBCarouselCaption>
                                   <div style={{color: "black"}}>

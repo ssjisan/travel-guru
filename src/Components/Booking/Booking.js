@@ -7,6 +7,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from 'react-bootstrap/Button';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import { Link } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -41,6 +43,7 @@ const Booking = () => {
                                   <p>Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.With Muslim Aid and YPSA as partners in Ukhiya and Kutubdia district respectively, we will continue to build capacity of teachers and teacher trainers. Our work to establish an enabling, vibrant reading environment and to promote a reading habit among children will pace up as we graduate from the first year of the project. We are banking on the learnings from year one and looking forward to 2019 with renewed energy and firm commitment toward equitable and quality education for all.</p>
             </div>
             <div id="booking">
+              <h4>Travel Info</h4>
             <FormControl className={classes.formControl} style={{width: 600}}>
                     <InputLabel id="demo-simple-select-label">Origin</InputLabel>
                         <Select labelId="demo-simple-select-label" id="demo-simple-select" value={origin} onChange={handleOrigin} >
@@ -60,7 +63,7 @@ const Booking = () => {
                             <MenuItem value={9}>Sundarban</MenuItem>
                         </Select>
             </FormControl> <br/>
-            <Button variant="info" style={{width: 600}}>Start Booking</Button>
+              <Link to="/hotel"> <Button variant="info" style={{width: 600}}>Start Booking</Button> </Link> 
             </div>
         </div>
     );
