@@ -1,0 +1,14 @@
+.navBar{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mr-auto  Button{
+    margin-left: 20px;
+    width: 100px;
+}
+
+.nav-link{
+    margin: auto 20px;
+}
+

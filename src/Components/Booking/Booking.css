@@ -1,0 +1,36 @@
+#bookingContainer{
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background-image: url(https://t1.gstatic.com/images?q=tbn:ANd9GcRD2kheKNy93HeweDwV9jPvqvA_qgr5K4agQ5-rIQQ8-Cm6y-IK47ezNDhM7It3XbWZo1G8aTcC7_fSWA);
+    height: 890px;
+    background-color: blanchedalmond;
+    padding: 20px ;
+}
+
+#bookingContainer img{
+    position: absolute;
+    height: 100%;
+}
+
+#info{
+    width: 50%;
+    text-align: center;
+    margin: auto 0;
+}
+
+#info h3{
+    color: white;
+}
+
+#info p{
+    color: white;
+}
+#booking{
+
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    height: 50%;
+    margin: auto 0;
+}
