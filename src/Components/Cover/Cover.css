@@ -1,3 +1,13 @@
-.carousel img{
-    width: 100%;
+#card{
+   display: flex;
+   padding-left: 350px;
+}
+
+.carousel{
+    margin: 20px;
+}
+
+.innerCard{
+    padding-right: 50px;
+    padding-left: 50px;
 }

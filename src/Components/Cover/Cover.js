@@ -1,63 +1,138 @@
 import React from 'react';
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
 import Button from 'react-bootstrap/Button';
 import './Cover.css'
+import coxsBazar from '../../Image/coxs bazar.jpg';
+import sreemangal from '../../Image/sreemangal.jpg';
+import sundarban from '../../Image/sundarban.jpg'
+import coxsBazarCard from '../../Image/Rectangle 1.png'
+import sreemangalCard from '../../Image/Sreemongol.png'
+import sundarbanCard from '../../Image/sundorbon.png'
+import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom';
 
 const Cover = () => {
     
-    return (
-        <div className="carousel">
-           <MDBContainer>
-                <MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
-                        <MDBCarouselInner>
-                            <MDBCarouselItem itemId="1">
-                                <MDBView>
-                                    <img className="d-block w-100" style={{width:100}} src="https://external-preview.redd.it/J2poU3SeyemprBqG97c5VcAf5BuDwADYuGbs2d3H6AI.jpg?auto=webp&s=73b4d0e2b6cbd2dd56c485df82a6ec50e55f3fcd" alt="First slide"/>
-                                
-                                </MDBView>
-                                <MDBCarouselCaption>
-                                  <div style={{color: "black"}}>
-                                  <h3>Cox's Bazar</h3>
-                                  <p>Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.</p>
-                                <Button variant="warning">Booking</Button>
-                                  </div>
-                                </MDBCarouselCaption>
-                            </MDBCarouselItem>
-                           
-                           
-                            {/* Item One End */}
-                            <MDBCarouselItem itemId="2">
-                                <MDBView>
-                                    <img className="d-block w-100" src="https://images8.alphacoders.com/485/thumb-1920-485178.jpg" alt="Second slide" />
-                                      <MDBMask overlay="black-strong" />
-                                </MDBView>
-                                <MDBCarouselCaption>
-                                <div style={{color: "black"}}>
-                                  <h3>Cox's Bazar</h3>
-                                  <p>Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.</p>
-                                  <Button variant="info">Booking</Button>
-                                  </div>
-                                </MDBCarouselCaption>
-                            </MDBCarouselItem>
-                            {/* Item Two End */}
+  return (
+    <div className="carousel">
 
-                            <MDBCarouselItem itemId="3">
-                                <MDBView>
-                                    <img className="d-block w-100" src="https://c1.wallpaperflare.com/preview/148/416/972/deer-sundarban-bangladesh.jpg" alt="Second slide" />
-                                      <MDBMask overlay="black-strong" />
-                                </MDBView>
-                                <MDBCarouselCaption>
-                                <div style={{color: "black"}}>
-                                  <h3>Cox's Bazar</h3>
-                                  <p>Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.</p>
-                                  <Button variant="success">Booking</Button>
-                                  </div>
-                                </MDBCarouselCaption>
-                            </MDBCarouselItem>
-      </MDBCarouselInner>
-    </MDBCarousel>
-    </MDBContainer>
+
+      {/*********************************************************** Slider Start ******************************************************************/}
+      <div>
+        <MDBContainer>
+          <MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1" >
+            <MDBCarouselInner>
+
+              {/******************************************************* First Card Start ***********************************************************/}
+              <MDBCarouselItem itemId="1">
+                <MDBView>
+                  <img className="d-block w-100" src={coxsBazar} alt="First slide"/>
+                </MDBView>
+                <MDBCarouselCaption style={{display: "flex", marginLeft: "flex"}}>
+                  <Card className="bg-dark text-white" style={{ width: '18rem', height: '28rem'}}>
+                    <Card.Img src={coxsBazarCard} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Cox's Bazar</Card.Title>
+                    <Link to={"/destination/"+1}> <Button variant="primary" style={{marginTop:300}}>Booking</Button> </Link>
+                  </Card.ImgOverlay>
+                  </Card>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              {/*********************************************************** First Card End *********************************************************/}
+
+
+              {/********************************************************* Second Card Start ********************************************************/}
+              <MDBCarouselItem itemId="2">
+                <MDBView>
+                  <img className="d-block w-100" src={sreemangal} alt="Second slide" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <Card className="bg-dark text-white" style={{ width: '18rem', height: '28rem'}}>
+                    <Card.Img src={sreemangalCard} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title style={{color: "yellow"}}>Sreemangal</Card.Title>
+                    <Link to={"/destination/"+2}> <Button variant="primary" style={{marginTop:300}}>Booking</Button> </Link>
+                  </Card.ImgOverlay>
+                  </Card>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              {/*********************************************************** Second Card End ********************************************************/}
+
+              
+              {/*********************************************************** Thrid Card Start *******************************************************/}
+              <MDBCarouselItem itemId="3">
+                <MDBView>
+                  <img className="d-block w-100" src={sundarban} alt="Second slide" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <Card className="bg-dark text-white" style={{ width: '18rem', height: '28rem'}}>
+                    <Card.Img src={sundarbanCard} alt="Card image" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Sundarban</Card.Title>
+                    <Link to={"/destination/"+3}> <Button variant="primary" style={{marginTop:300}}>Booking</Button> </Link>
+                  </Card.ImgOverlay>
+                  </Card>
+                  </MDBCarouselCaption>
+                </MDBCarouselItem>
+                {/*********************************************************** Thrid Card End *******************************************************/}
+
+              </MDBCarouselInner>
+            </MDBCarousel>
+            </MDBContainer>
+          </div>
+          {/*********************************************************** Slider End ******************************************************************/}
+
+          <br/>
+          
+          {/****************************************************** Card Under Slider Start **********************************************************/}
+
+          <div id="card">
+          {/*********************************************************** First Text Card Start *****************************************************/}
+            <div className="innerCard">
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>Cox's Bazar</Card.Title>
+                    <Card.Text>
+                      If you want to soak your feet in the salt water of the sea, book your hotel to Cox's Bazar with us.
+                    </Card.Text>
+                    <Link to={"/destination/"+1}> <Button variant="primary">Booking</Button> </Link>
+                </Card.Body>
+              </Card>
+            </div>
+          {/*********************************************************** First Text Card End *****************************************************/}  
+            
+          {/*********************************************************** Second Text Card Start *****************************************************/}  
+            <div className="innerCard">
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>Sreemangal</Card.Title>
+                    <Card.Text>
+                      What happens if you do not eat tea in the country of tea? Take a tour and book a hotel with us.
+                    </Card.Text>
+                    <Link to={"/destination/"+2}> <Button variant="primary">Booking</Button> </Link>
+                </Card.Body>
+              </Card>
+            </div>
+          {/*********************************************************** Second Text Card End *****************************************************/}  
+
+          {/*********************************************************** Third Text Card Start *****************************************************/}
+            <div className="innerCard">
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>Sundarban</Card.Title>
+                    <Card.Text>
+                      If you want to see tigers, deer, birds- buy tickets for the Sundarbans now and book a hotel with us.
+                    </Card.Text>
+                    <Link to={"/destination/"+3}> <Button variant="primary">Booking</Button> </Link>
+                </Card.Body>
+              </Card>
+            </div>
+          {/*********************************************************** Third Text Card End *****************************************************/}    
+                
+    
+          </div>
+          {/****************************************************** Card Under Slider End **********************************************************/} 
         </div>
     );
 };

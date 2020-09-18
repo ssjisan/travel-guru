@@ -14,35 +14,42 @@ import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
 
 
 const Header = () => {
-const [loggedInUser, setLoggedInUser] = useContext(UserContext);  
+const [loggedInUser, setLoggedInUser] = useContext(UserContext); 
+const signOut = () =>{
+    setLoggedInUser({});
+}
+
     return (
         <div className="navBar">
             <Navbar bg="" variant="light">
-                <Navbar.Brand href="/home">
-                <img
-                    src={logo}
-                    width="150"
-                    height="50"
-                    className="d-inline-block align-top"
-                    alt="React Bootstrap logo"
-                />
-                </Navbar.Brand>
+                {/********************************************* Logo Start ****************************************************/}
+                <Link to="/home">
+                    <img src={logo} width="150" height="50" style={{margin:10}}  alt="React Bootstrap logo" />
+                </Link>
+                {/********************************************* Logo End ******************************************************/}
+
+                {/****************************************** Search Field Start ***********************************************/}
                 <FormControl type="text" placeholder="Search Your Destination" className="mr-sm-2" style={{width: 500}} />
+                {/****************************************** Search Field End *************************************************/}
+
+                {/****************************************** Menu Item Start **************************************************/}
                 <Nav className="mr-auto"> 
-                    <Link className="nav-link" to="/publichome" style={{color: "black"}}>News</Link>
-                    <Link className="nav-link" to="/destination" style={{color: "black"}}>Destination</Link>
-                    <Link className="nav-link" to="/blog" style={{color: "black"}}>Blog</Link>
-                    <Link className="nav-link" to="/contact" style={{color: "black"}}>Contact</Link>
+                    <Link className="nav-link" to="/home" style={{color: "white"}}>Home</Link>
+                    <Link className="nav-link" to="/blog" style={{color: "white"}}>Blog</Link>
+                    <Link className="nav-link" to="/contact" style={{color: "white"}}>Contact</Link>
                     {
                         loggedInUser.email && 
-                            <p style={{marginTop: 15}}> 
-                            <img src={loggedInUser.photo} style={{width: 40, borderRadius:50}} alt=""/> {loggedInUser.name} 
-                            <Link><FontAwesomeIcon style={{marginLeft:20}} icon={faPowerOff} /></Link>  </p>  
+                            <p style={{marginTop: 15 , color:"white"}}> 
+                            <img src={loggedInUser.photo} style={{width: 40, borderRadius:50}} alt=""/> {loggedInUser.name} </p>  
                     }
-
-                    {!loggedInUser.email &&  <Link to="/signIn"> <Button variant="info">  Sign In  </Button> </Link> }
-                   
+                    {
+                        loggedInUser.email && <Link> <Button variant="info" style={{marginTop:15}} onClick={signOut}>  Sign Out  </Button> </Link>  
+                    }       
+                    {
+                        !loggedInUser.email &&  <Link to="/signIn"> <Button variant="info">  Sign In  </Button> </Link> 
+                    }
                 </Nav>
+                {/****************************************** Menu Item End ****************************************************/}   
             </Navbar>
         </div>
     );

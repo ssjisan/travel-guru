@@ -33,10 +33,10 @@ function App() {
             <Route path="/signIn">
               <Login></Login>
             </Route>
-            <Route path="/destination">
+            <Route path="/destination/:placeId">
               <Booking></Booking>
             </Route>
-            <PrivateRoute path="/hotel">
+            <PrivateRoute path="/hotel/:placeId">
               <Hotel></Hotel>
             </PrivateRoute> 
             <Route path="*">
